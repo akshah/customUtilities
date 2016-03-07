@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from Logger.logger import logger
+from customUtilities.logger import logger
 
 logger=logger('Test.log')
 

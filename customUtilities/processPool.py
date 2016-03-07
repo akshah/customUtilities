@@ -32,7 +32,7 @@ class processPool(object):
         return pool
     
     # Will run the function with the arguments
-    def runParallelWithPool(self, functionCall, args, logger=logger('processPool.log')):
+    def runParallelWithPool(self, functionCall, args, logger=logger("processPool.log")):
         try:
             result = self.pool.map_async(functionCall, args) 
    
