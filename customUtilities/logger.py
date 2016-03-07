@@ -15,7 +15,7 @@ class logger(object):
             #Log file
             logfile = open(self.logfilename,'a')
 
-            _,localtime=self.currentTime()
+            _,localtime=currentTime()
             time='['+localtime+']  '
             print(time,'['+mtype+']',msg,file=logfile)
             logfile.close()
