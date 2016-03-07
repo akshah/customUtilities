@@ -1,16 +1,13 @@
 from __future__ import print_function
+from customUtilities.helperFunction import *
 import threading
-import time
+
 
 class logger(object):
 
     def __init__(self,logfilename):
         self.lock = threading.RLock()
         self.logfilename = logfilename
-        
-    def current_time(self):
-        return int(time.time()),time.strftime('%Y-%m-%d %H:%M:%S',time.localtime())
-
 
     def _print_log(self,mtype,msg):
         self.lock.acquire()
@@ -18,7 +15,7 @@ class logger(object):
             #Log file
             logfile = open(self.logfilename,'a')
 
-            _,localtime=self.current_time()
+            _,localtime=self.currentTime()
             time='['+localtime+']  '
             print(time,'['+mtype+']',msg,file=logfile)
             logfile.close()
