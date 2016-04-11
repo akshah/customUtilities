@@ -13,7 +13,7 @@ class logger(object):
         self.lock.acquire()
         try:      
             #Log file
-            logfile = open(self.logfilename,'a')
+            logfile = open(self.logfilename,'a+')
 
             _,localtime=currentTime()
             time='['+localtime+']  '
